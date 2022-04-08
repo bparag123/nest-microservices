@@ -1,0 +1,13 @@
+version: "3.2"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    #Here the port 15672 is for the rabbitmq manager
+    #Here the port 5672 is for the queuing protocol
+    ports:
+        - 5672:5672
+        - 15672:15672
+    # This is a Volume dirrectory fo the docker
+    volumes:
+        - /var/lib/rabbitmq/
