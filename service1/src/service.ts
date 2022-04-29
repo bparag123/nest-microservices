@@ -23,7 +23,7 @@ async function bootstrap(): Promise<void> {
     },
   );
   app.listen().then(() => {
-    console.log('Microservice is running');
+    console.log('Service1 is running as a microservice');
   });
 }
 bootstrap();

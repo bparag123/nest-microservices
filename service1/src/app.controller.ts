@@ -9,7 +9,7 @@ export class AppController {
   @EventPattern('test')
   @Get()
   getHello(@Payload() data: number[], @Ctx() context: RmqContext): string {
-    console.log(data);
+    console.log('Its Data From a Producer', data);
     return this.appService.getHello();
   }
 }

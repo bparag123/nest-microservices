@@ -1,4 +1,4 @@
-import { Controller, Get, Inject } from '@nestjs/common';
+import { Body, Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { AppService } from './app.service';
 
@@ -10,8 +10,8 @@ export class AppController {
   ) {}
 
   @Get()
-  getHello(): string {
-    this.client.emit('test', { msg: 'hello my microservice' });
+  getHello(@Body() data): string {
+    this.client.emit('test', data);
     return this.appService.getHello();
   }
 }
